@@ -9,9 +9,14 @@ This uses MonoDevelop binaries from @fusion809 PKBUILD repo for Arch Linux: http
 To install simply download a release and do:
 ```
 chmod +x monodevelop-{version}.run
-./monodevelop-{version}.run
+sudo ./monodevelop-{version}.run
 ```
 where you replace `{version}` with the version you've downloaded.
+
+The installer will add "MonoDevelop Stable" application launcher, as well as the following commands:
+ - monodevelop-stable - Launches MonoDevelop
+ - mdtool-stable - Launches MDTool
+ - monodevelop-stable-uninstall - Uninstalls MonoDevelop from .run installer
 
 ## Building installer from source
 
