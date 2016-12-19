@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check installation priviledge
+if [ "$(id -u)" != "0" ]; then
+	echo "Please make sure you are running this installer with sudo or as root." 1>&2
+	exit 1
+fi
+
+# Uninstall
+rm -rf /opt/MonoDevelop
+rm /usr/bin/monodevelop-stable
+rm /usr/bin/mdtool-stable
+rm /usr/bin/monodevelop-stable-uninstall
+rm /usr/share/applications/monodevelop-stable.desktop
+rm /usr/share/icons/hicolor/scalable/apps/monodevelop-stable.svg

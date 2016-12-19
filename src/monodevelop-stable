@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Few needed hacks for MonoDevelop
+export UBUNTU_MENUPROXY=0
+export LIBOVERLAY_SCROLLBAR=0
+export OXYGEN_DISABLE_INNER_SHADOWS_HACK=1
+
+# Run MonoDevelop
+mono /opt/MonoDevelop/bin/MonoDevelop.exe "$@"
