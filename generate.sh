@@ -6,13 +6,17 @@ cd tmp
 
 echo "Downloading metadata..."
 {
-	URL="https://www.github.com$(
+	URLS="$(
 	curl https://github.com/fusion809/PKGBUILDs/releases | \
 	grep 'monodevelop' | \
 	grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
 	sed -e 's/^<a href=["'"'"']//' -e 's/["'"'"']$//' \
 	)"
 } &> /dev/null
+for URL in $URLS
+do
+    URL="https://www.github.com$URL"
+done
 
 echo "Downloading MonoDevelop... ($URL)"
 wget -O monodevelop.tar.xz $URL &> /dev/null
