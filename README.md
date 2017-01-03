@@ -11,7 +11,7 @@ To install simply download a release and do:
 chmod +x monodevelop-{version}.run
 sudo ./monodevelop-{version}.run
 ```
-where you replace `{version}` with the version you've downloaded.
+where you replace `{version}` with the version you've downloaded. The installer will not download dependencies (mono, xbuild, etc.) so you should install `monodevelop` package from you systems default repos to fetch them quickly.
 
 The installer will add "MonoDevelop Stable" application launcher, as well as the following commands:
  - monodevelop-stable - Launches MonoDevelop
