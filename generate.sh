@@ -4,14 +4,14 @@
 mkdir tmp
 cd tmp
 
-echo "Downloading metadata..."
-URL="https://www.archlinux.org/packages/extra/x86_64/monodevelop/download/"
+#echo "Downloading metadata..."
+#URL="https://www.archlinux.org/packages/extra/x86_64/monodevelop/download/"
 
-echo "Downloading MonoDevelop... ($URL)"
-wget -O monodevelop.tar.xz $URL &> /dev/null
+#echo "Downloading MonoDevelop... ($URL)"
+#wget -O monodevelop.tar.xz $URL &> /dev/null
 
-echo "Extracting archive..."
-tar xf monodevelop.tar.xz
+#echo "Extracting archive..."
+#tar xf monodevelop.tar.xz
 
 echo "Copying installer data..."
 
@@ -21,7 +21,7 @@ cp -rf ../src/. installer
 
 # Copy MonoDevelop binaries
 mkdir installer/MonoDevelop
-cp -rf usr/lib/monodevelop/. installer/MonoDevelop
+cp -rf ../monodevelop/. installer/MonoDevelop
 # Lets not include version control addin so that people don't ask me why it's not working...
 rm -rf installer/MonoDevelop/AddIns/VersionControl
 
