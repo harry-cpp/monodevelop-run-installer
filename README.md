@@ -18,14 +18,7 @@ The installer will add "MonoDevelop Stable" application launcher, as well as the
 
 ## Building installer from source
 
-To build from source, simply download and call the generate script as seen bellow:
+To build from source, simply download and install monodevelop from flatpak, and than just call the generate script:
 ```
-git clone https://github.com/cra0zy/monodevelop-run-installer.git
-cd monodevelop-run-installer
-git clone https://github.com/mono/monodevelop.git
-cd monodevelop
-./configure
-make
-cd ..
 ./generate.sh
 ```

@@ -1,17 +1,10 @@
 #!/bin/bash
 # https://github.com/fusion809/PKGBUILDs/releases
 
+MDFDIR="$HOME/.local/share/flatpak/app/com.xamarin.MonoDevelop/current/active/files"
+
 mkdir tmp
 cd tmp
-
-#echo "Downloading metadata..."
-#URL="https://www.archlinux.org/packages/extra/x86_64/monodevelop/download/"
-
-#echo "Downloading MonoDevelop... ($URL)"
-#wget -O monodevelop.tar.xz $URL &> /dev/null
-
-#echo "Extracting archive..."
-#tar xf monodevelop.tar.xz
 
 echo "Copying installer data..."
 
@@ -21,12 +14,9 @@ cp -rf ../src/. installer
 
 # Copy MonoDevelop binaries
 mkdir installer/MonoDevelop
-cp -rf ../monodevelop/. installer/MonoDevelop
-# Lets not include version control addin so that people don't ask me why it's not working...
-rm -rf installer/MonoDevelop/AddIns/VersionControl
-
-# Copy MonoDevelop icon
-cp usr/share/icons/hicolor/scalable/apps/monodevelop.svg installer/monodevelop-stable.svg
+cp -rf $MDFDIR/lib/monodevelop/. installer/MonoDevelop
+# Lets not include git version control addin so that people don't ask me why it's not working...
+rm -rf installer/MonoDevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Git.dll
 
 echo "Building the Installer..."
 rm -f ../bin
