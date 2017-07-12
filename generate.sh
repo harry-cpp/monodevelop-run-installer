@@ -1,5 +1,4 @@
 #!/bin/bash
-# https://github.com/fusion809/PKGBUILDs/releases
 
 # Check flatpak installed
 if ! type "flatpak" &> /dev/null
