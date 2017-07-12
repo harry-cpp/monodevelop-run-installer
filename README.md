@@ -18,7 +18,7 @@ The installer will add "MonoDevelop Stable" application launcher, as well as the
 
 ## Building installer from source
 
-To build from source, simply download and install monodevelop from flatpak, and than just call the generate script:
+To build from source, simply download and install `flatpak`, and after than just call the generate script (it will automatically download and update MonoDevelop for you):
 ```
 ./generate.sh
 ```
