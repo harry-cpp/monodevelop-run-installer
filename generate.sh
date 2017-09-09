@@ -40,8 +40,9 @@ cp -rf ../src/. installer
 # Copy MonoDevelop binaries
 mkdir installer/MonoDevelop
 cp -rf $MDFDIR/lib/monodevelop/. installer/MonoDevelop
-# Lets not include git version control addin so that people don't ask me why it's not working...
-rm -rf installer/MonoDevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Git.dll
+
+# remove bundled version of libgit2
+rm installer/MonoDevelop/AddIns/VersionControl/libgit2-*
 
 echo "Building the Installer..."
 rm -rf ../bin
