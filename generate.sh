@@ -41,14 +41,6 @@ cp -rf "../src/." "installer"
 mkdir installer/MonoDevelop
 cp -rf "$MDFDIR/lib/monodevelop/." "installer/MonoDevelop"
 
-# Include gtk-sharp
-GTKVER="$(ls -x $MDFDIR/lib/mono/gac/gtk-sharp)"
-cp -rf "$MDFDIR/lib/mono/gac/atk-sharp/$GTKVER/." "installer/MonoDevelop/bin"
-cp -rf "$MDFDIR/lib/mono/gac/gtk-sharp/$GTKVER/." "installer/MonoDevelop/bin"
-cp -rf "$MDFDIR/lib/mono/gac/gdk-sharp/$GTKVER/." "installer/MonoDevelop/bin"
-cp -rf "$MDFDIR/lib/mono/gac/glib-sharp/$GTKVER/." "installer/MonoDevelop/bin"
-cp -rf "$MDFDIR/lib/mono/gac/pango-sharp/$GTKVER/." "installer/MonoDevelop/bin"
-
 # Remove bundled version of libgit2
 rm installer/MonoDevelop/AddIns/VersionControl/libgit2-*
 
