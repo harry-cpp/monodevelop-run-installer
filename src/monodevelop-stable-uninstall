@@ -13,4 +13,6 @@ rm /usr/bin/mdtool-stable
 rm /usr/bin/monodevelop-stable-uninstall
 rm /usr/share/applications/monodevelop-stable.desktop
 rm /usr/share/icons/hicolor/scalable/apps/monodevelop-stable.svg
-rm /usr/lib/libgit2-e8b8948.so
+
+rm -f /usr/lib/libgit2-e8b8948.so
+rm -f /usr/lib/x86_64-linux-gnu/libgit2-e8b8948.so

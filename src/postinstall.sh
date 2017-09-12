@@ -1,6 +1,11 @@
 #!/bin/bash
 
 LIBPATH="/usr/lib"
+if [ -d "/usr/lib/x86_64-linux-gnu" ]
+then
+	LIBPATH="/usr/lib/x86_64-linux-gnu"
+fi
+
 LIBGIT2="$(ls -x $LIBPATH | grep -m 1 libgit2.so)"
 
 # Check installation priviledge
