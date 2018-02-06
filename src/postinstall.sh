@@ -1,12 +1,6 @@
 #!/bin/bash
 
-LIBPATH="/usr/lib"
-if [ -d "/usr/lib/x86_64-linux-gnu" ]
-then
-	LIBPATH="/usr/lib/x86_64-linux-gnu"
-fi
-
-LIBGIT2="$(ls -x $LIBPATH | grep -m 1 libgit2.so)"
+LIBGIT2="$(ldconfig -p | grep -m 1 libgit2.so | sed 's/.\+=> //')"
 
 # Check installation priviledge
 if [ "$(id -u)" != "0" ]; then
@@ -15,7 +9,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Check for libgit2
-if [ -z "$LIBGIT2" ]
+if [ ! -f "$LIBGIT2" ]
 then
 	echo "libgit2 not found, please install it and re run the installer."
 	exit 1
@@ -32,8 +26,7 @@ echo "Copying MonoDevelop binaries..."
 cp -rf MonoDevelop/ /opt/MonoDevelop/
 
 echo "Adding libgit2-e8b8948.so symlink to fix VersionControl Addin..."
-rm -f "$LIBPATH/libgit2-e8b8948.so"
-ln -s "$LIBPATH/$LIBGIT2" "$LIBPATH/libgit2-e8b8948.so"
+ln -s "$LIBGIT2" "/opt/MonoDevelop/AddIns/VersionControl/libgit2-e8b8948.so"
 
 echo "Adding terminal commands..."
 cp monodevelop-stable /usr/bin/monodevelop-stable
